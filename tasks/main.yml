@@ -1,2 +1,6 @@
 ---
-# tasks file for ansible-role-tmpreaper
+- name: install tmpreaper
+  apt: pkg=tmpreaper state=installed
+
+- name: configure tmpreaper
+  template: src=tmpreaper.conf.j2 dest=/etc/tmpreaper.conf
